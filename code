@@ -1,7 +1,7 @@
 n_splits = 10
 faixa = 10
 
-# Cópia do Dataframe Original
+# Dataframe Copy
 df_copy = df
 
 i = 0
@@ -9,9 +9,9 @@ x = 100
 y = 91
 while i < n_splits:
     parcial = df_copy.limit(faixa)
-    percentiles_old_copy = df_copy.subtract(parcial).orderBy(f.col("coluna com os valores").desc())
-    print("Parcial: Soma {} até {}".format(x,y))
-    parcial.agg({'clientes': 'sum'}).show()
+    percentiles_old_copy = df_copy.subtract(parcial).orderBy(f.col("column with values").desc())
+    print("Parcial: Sum {} until {}".format(x,y))
+    parcial.agg({'customers': 'sum'}).show()
     i += 1
     x-= 10
     y-= 10
